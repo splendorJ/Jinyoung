@@ -516,16 +516,20 @@ async def task():
 					bossDateString[i] = '9999-99-99'
 					bossTime[i] = now+datetime.timedelta(days=365)
 					if bossData[i][6] != '' :
-						embed = discord.Embed(
+						"""embed = discord.Embed(
 								description= "```" + bossData[i][0] + '탐 ' + bossData[i][4] + '\n<' + bossData[i][6] + '>```' ,
 								color=0x00ff00
-								)
+								)"""
+						await client.get_channel(channel).send("```" + bossData[i][0] + '탐 ' + bossData[i][4] + '\n<' + bossData[i][6] + '>```' ,tts=True)
+			
 					else :
-						embed = discord.Embed(
+						"""embed = discord.Embed(
 								description= "```" + bossData[i][0] + '탐 ' + bossData[i][4] + "```" ,
 								color=0x00ff00
-								)
-					await client.get_channel(channel).send(embed=embed, tts=True)
+								)"""
+						await client.get_channel(channel).send("```" + bossData[i][0] + '탐 ' + bossData[i][4] + "```" ,tts=True)
+						
+					"""await client.get_channel(channel).send(embed=embed, tts=True)"""
 					"""await PlaySound(voice_client1, './sound/' + bossData[i][0] + '젠.mp3')"""
 
 				################ 보스 자동 멍 처리 ################ 
