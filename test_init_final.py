@@ -458,16 +458,16 @@ async def task():
 					if basicSetting[3] != '0':
 						if fixed_bossFlag0[i] == False:
 							fixed_bossFlag0[i] = True
-							await client.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
-							await PlaySound(voice_client1, './sound/' + fixed_bossData[i][0] + '알림1.mp3')
+							await client.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=True)
+							"""await PlaySound(voice_client1, './sound/' + fixed_bossData[i][0] + '알림1.mp3')"""
 
 				################ before_alert ################ 
 				if fixed_bossTime[i] <= priv and fixed_bossTime[i] > now:
 					if basicSetting[1] != '0' :
 						if fixed_bossFlag[i] == False:
 							fixed_bossFlag[i] = True
-							await client.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
-							await PlaySound(voice_client1, './sound/' + fixed_bossData[i][0] + '알림.mp3')
+							await client.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=True)
+							"""await PlaySound(voice_client1, './sound/' + fixed_bossData[i][0] + '알림.mp3')"""
 				
 				################ 보스 젠 시간 확인 ################
 				if fixed_bossTime[i] <= now :
@@ -479,7 +479,7 @@ async def task():
 							color=0x00ff00
 							)
 					await client.get_channel(channel).send(embed=embed, tts=False)
-					await PlaySound(voice_client1, './sound/' + fixed_bossData[i][0] + '젠.mp3')
+					"""await PlaySound(voice_client1, './sound/' + fixed_bossData[i][0] + '젠.mp3')"""
 
 			################ 일반 보스 확인 ################ 
 			for i in range(bossNum):
@@ -489,10 +489,10 @@ async def task():
 						if bossFlag0[i] == False:
 							bossFlag0[i] = True
 							if bossData[i][6] != '' :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=True)
 							else :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
-							await PlaySound(voice_client1, './sound/' + bossData[i][0] + '알림1.mp3')
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=True)
+							"""await PlaySound(voice_client1, './sound/' + bossData[i][0] + '알림1.mp3')"""
 
 				################ before_alert ################
 				if bossTime[i] <= priv and bossTime[i] > now:
@@ -500,10 +500,10 @@ async def task():
 						if bossFlag[i] == False:
 							bossFlag[i] = True
 							if bossData[i][6] != '' :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=True)
 							else :
-								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
-							await PlaySound(voice_client1, './sound/' + bossData[i][0] + '알림.mp3')
+								await client.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=True)
+							"""await PlaySound(voice_client1, './sound/' + bossData[i][0] + '알림.mp3')"""
 
 				################ 보스 젠 시간 확인 ################ 
 				if bossTime[i] <= now :
@@ -525,8 +525,8 @@ async def task():
 								description= "```" + bossData[i][0] + '탐 ' + bossData[i][4] + "```" ,
 								color=0x00ff00
 								)
-					await client.get_channel(channel).send(embed=embed, tts=False)
-					await PlaySound(voice_client1, './sound/' + bossData[i][0] + '젠.mp3')
+					await client.get_channel(channel).send(embed=embed, tts=True)
+					"""await PlaySound(voice_client1, './sound/' + bossData[i][0] + '젠.mp3')"""
 
 				################ 보스 자동 멍 처리 ################ 
 				if bossMungFlag[i] == True:
@@ -547,7 +547,7 @@ async def task():
 									color=0xff0000
 									)
 								await client.get_channel(channel).send(embed=embed, tts=False)
-								await PlaySound(voice_client1, './sound/' + bossData[i][0] + '미입력.mp3')
+								"""await PlaySound(voice_client1, './sound/' + bossData[i][0] + '미입력.mp3')"""
 							################ 멍 보스 ################
 							else :
 								bossFlag[i] = False
@@ -563,7 +563,7 @@ async def task():
 									color=0xff0000
 									)
 								await client.get_channel(channel).send(embed=embed, tts=False)
-								await PlaySound(voice_client1, './sound/' + bossData[i][0] + '멍.mp3')
+								"""await PlaySound(voice_client1, './sound/' + bossData[i][0] + '멍.mp3')"""
 
 		await asyncio.sleep(1) # task runs every 60 seconds
 
