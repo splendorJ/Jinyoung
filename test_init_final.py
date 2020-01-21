@@ -1712,6 +1712,7 @@ while True:
 				
 				await client.get_channel(channel).send("----- 보스탐 정보 -----",tts=False)
 				await client.get_channel(channel).send(information,tts=False)
+				
 				await client.get_channel(channel).send("----- 미예약 보스 -----",tts=False)
 				await client.get_channel(channel).send(temp_bossTimeSTR1,tts=False)
 
@@ -1806,7 +1807,7 @@ while True:
 				else :
 					information = '``` ```'
 
-				embed = discord.Embed(
+				"""embed = discord.Embed(
 						title = "----- 고 정 보 스 -----",
 						description= fixed_information,
 						color=0x0000ff
@@ -1822,8 +1823,17 @@ while True:
 						inline = False
 						)
 				
-				await client.get_channel(channel).send( embed=embed, tts=False)
-
+				await client.get_channel(channel).send( embed=embed, tts=False)"""
+				
+				await client.get_channel(channel).send("----- 고 정 보 스 -----",tts=False)
+				await client.get_channel(channel).send(fixed_information,tts=False)
+				
+				await client.get_channel(channel).send("----- 보스탐 정보 -----",tts=False)
+				await client.get_channel(channel).send(information,tts=False)
+				
+				await client.get_channel(channel).send("----- 미예약 보스 -----",tts=False)
+				await client.get_channel(channel).send(temp_bossTimeSTR1,tts=False)
+					
 				await dbSave()
 
 			################ 현재시간 확인 ################ 
