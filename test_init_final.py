@@ -1697,7 +1697,7 @@ while True:
 				else :
 					information = '``` ```'
 
-				embed = discord.Embed(
+				"""embed = discord.Embed(
 						title = "----- 보스탐 정보 -----",
 						description= information,
 						color=0x0000ff
@@ -1708,7 +1708,12 @@ while True:
 						inline = False
 						)
 				
-				await client.get_channel(channel).send( embed=embed, tts=False)
+				await client.get_channel(channel).send( embed=embed, tts=False)"""
+				
+				await client.get_channel(channel).send("----- 보스탐 정보 -----",tts=False)
+				await client.get_channel(channel).send(information,tts=False)
+				await client.get_channel(channel).send("----- 미예약 보스 -----",tts=False)
+				await client.get_channel(channel).send(temp_bossTimeSTR1,tts=False)
 
 				await dbSave()
 
