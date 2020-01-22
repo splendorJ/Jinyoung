@@ -206,6 +206,9 @@ def init():
 	basicSetting.append(inputData[13][12:])    #basicSetting[14] : 시트 이름
 	basicSetting.append(inputData[14][12:])    #basicSetting[15] : 입력 셀
 	basicSetting.append(inputData[15][13:])    #basicSetting[16] : 출력 셀
+	"""직접 추가한 설정"""
+	#basicSetting.append(inputData[6][16:]) #basicSetting[17] : before_alertB(불완전) 
+	
 
 	############## 보탐봇 명령어 리스트 #####################
 	for i in range(len(command_inputData)):
