@@ -161,7 +161,12 @@ def init():
 	file_data2 = base64.b64decode(fixed_inidata.content)
 	file_data2 = file_data2.decode('utf-8')
 	fixed_inputData = file_data2.split('\n')
-
+	
+	#boss_inidataB = repo.get_contents("bossB.ini")
+	#file_data5 = base64.b64decode(boss_inidataB.content)
+	#file_data5 = file_data5.decode('utf-8')
+	#bossB_inputData = file_data5.split('\n')
+	
 	for i in range(len(fixed_inputData)):
 		FixedBossDateData.append(fixed_inputData[i])
 
@@ -363,6 +368,7 @@ async def task():
 	global fixed_bossNum
 	global chkvoicechannel
 	global chkrelogin
+	#global bossBNum
 
 	global bossTime
 	global tmp_bossTime
