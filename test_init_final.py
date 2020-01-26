@@ -86,20 +86,25 @@ repo_restart = g.get_repo(git_access_repo_restart)
 def init():
 	global basicSetting
 	global bossData
+	#global bossBData	#불완전 보스정보
 	global fixed_bossData
 
 	global bossNum
 	global fixed_bossNum
+	#global bossBNum	#불완전 보스숫자
 	global chkvoicechannel
 	global chkrelogin
-
+	
 	global bossTime
 	global tmp_bossTime
+	#global bossBTime	#불완전 보스시간
+	#global tmp_bossBTime	#불완전 보스시간 텀
 
 	global fixed_bossTime
-
 	global bossTimeString
 	global bossDateString
+	#global bossBTimeString	#불완전 보스 시간 스트링화
+	#global bossBDateString	#불완전 보스 날짜 스트링화
 	global tmp_bossTimeString
 	global tmp_bossDateString
 
@@ -207,12 +212,19 @@ def init():
 	basicSetting.append(inputData[12][11:])    #basicSetting[10] : json 파일명
 	basicSetting.append(inputData[4][17:])     #basicSetting[11] : 정산 채널 ID
 	basicSetting.append(inputData[11][12:])    #basicSetting[12] : sheet 이름
-	basicSetting.append(inputData[10][16:])    #basicSetting[13] : restart 주기
+	basicSetting.append(inputData[10][16:])    #basicSetting[13] : restart 주
 	basicSetting.append(inputData[13][12:])    #basicSetting[14] : 시트 이름
 	basicSetting.append(inputData[14][12:])    #basicSetting[15] : 입력 셀
 	basicSetting.append(inputData[15][13:])    #basicSetting[16] : 출력 셀
 	"""직접 추가한 설정"""
-	#basicSetting.append(inputData[6][16:]) #basicSetting[17] : before_alertB(불완전) 
+	#basicSetting.append(inputData[6][16:])     #basicSetting[17] : before_alertB(불완전)
+	
+	#basicSetting.append(inputData[5][15:])     #basicSetting[1] : before_alert(불완전)
+	#basicSetting.append(inputData[5][15:])     #basicSetting[1] : before_alert
+	
+	#basicSetting.append(inputData[5][15:])     #basicSetting[1] : before_alert(필드보스)
+	#basicSetting.append(inputData[5][15:])     #basicSetting[1] : before_alert
+	
 	
 
 	############## 보탐봇 명령어 리스트 #####################
